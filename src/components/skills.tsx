@@ -2,66 +2,73 @@
 
 import { motion } from "framer-motion";
 import { skills } from "@/lib/data";
+import { Sparkles } from "lucide-react";
 
 export default function Skills() {
   return (
-    <section id="skills" className="section-padding bg-muted/30">
+    <section id="skills" className="section-padding bg-muted/20 relative">
       <div className="container mx-auto">
         <div className="flex flex-col items-center mb-16 text-center space-y-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-bold uppercase tracking-wider text-xs"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-xs font-bold uppercase tracking-wider"
           >
-            My Technology Stack
+            <Sparkles size={13} />
+            <span>Technical Capabilities</span>
           </motion.div>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold tracking-tight"
+            className="text-4xl md:text-5xl font-black tracking-tight"
           >
-            Capabilities & <span className="text-gradient">Tools</span>
+            Core Stack & <span className="text-gradient">Expertise</span>
           </motion.h2>
           <motion.p
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ delay: 0.2 }}
-             className="text-muted-foreground text-lg max-w-2xl"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed"
           >
-             I leverage the latest technologies to build scalable, high-performance web and mobile applications with focus on security and user experience.
+            Battle-tested technologies powering high-concurrency enterprise web and mobile platforms with security and performance baked in.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.category}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="glass p-8 rounded-2xl hover:border-primary/20 transition-all group hover:shadow-xl"
+              transition={{ delay: index * 0.08 }}
+              className="glass-card p-7 md:p-8 rounded-3xl hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group flex flex-col justify-between"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-primary/10 rounded-xl group-hover:scale-110 transition-transform">
-                  <skill.icon className="text-primary" size={28} />
+              <div>
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="p-3 bg-primary/10 rounded-2xl text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
+                    <skill.icon size={24} />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold tracking-tight text-foreground">
+                    {skill.category}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold">{skill.category}</h3>
+
+                <ul className="flex flex-wrap gap-2 pt-1">
+                  {skill.items.map((item) => (
+                    <li
+                      key={item}
+                      className="px-3 py-1.5 bg-muted/60 hover:bg-primary/10 hover:text-primary hover:border-primary/30 text-xs font-semibold rounded-xl border border-border/70 transition-all text-foreground/80"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="flex flex-wrap gap-2 pt-2">
-                {skill.items.map((item) => (
-                  <li
-                    key={item}
-                    className="px-3 py-1 bg-white dark:bg-muted text-xs font-medium rounded-lg border border-border group-hover:border-primary/20 transition-colors"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </div>

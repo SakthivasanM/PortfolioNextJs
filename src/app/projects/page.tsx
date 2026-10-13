@@ -8,7 +8,7 @@ import ProjectCard from "@/components/project-card";
 import { projects } from "@/lib/data";
 import { Search, Filter, X } from "lucide-react";
 
-const categories = ["All", "Web App", "Mobile", "Enterprise", "AI"];
+const categories = ["All", "Enterprise", "AI", "Mobile", "Web App", "HRMS"];
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");

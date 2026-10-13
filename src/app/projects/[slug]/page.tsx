@@ -101,9 +101,23 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                    className="object-cover" 
                  />
               </div>
-              <div className="grid grid-cols-2 gap-4 mt-4">
-                 <div className="aspect-video relative rounded-2xl overflow-hidden border border-border bg-muted/20" />
-                 <div className="aspect-video relative rounded-2xl overflow-hidden border border-border bg-muted/20" />
+              <div className="p-6 rounded-2xl glass border border-border mt-6 space-y-4">
+                 <div className="flex items-center justify-between">
+                    <span className="text-xs uppercase font-bold tracking-wider text-muted-foreground">Domain Vertical</span>
+                    <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                      {Array.isArray(project.category) ? project.category.join(" • ") : project.category}
+                    </span>
+                 </div>
+                 <div className="flex items-center justify-between">
+                    <span className="text-xs uppercase font-bold tracking-wider text-muted-foreground">Deployment Status</span>
+                    <span className="text-xs font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" /> Production Deployed
+                    </span>
+                 </div>
+                 <div className="flex items-center justify-between">
+                    <span className="text-xs uppercase font-bold tracking-wider text-muted-foreground">Role / Ownership</span>
+                    <span className="text-xs font-semibold text-foreground">Lead Frontend & Integration</span>
+                 </div>
               </div>
             </motion.div>
           </div>

@@ -54,35 +54,53 @@ export default function Contact() {
               </motion.p>
             </div>
 
-            <div className="space-y-6 pt-8">
-              <motion.div 
+            <div className="space-y-4 pt-6">
+              <motion.a 
+               href={`mailto:${personalInfo.email}`}
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="flex items-center gap-6 p-6 glass rounded-2xl border border-white/20 dark:border-white/10"
+               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
               >
-                <div className="p-4 bg-primary/10 rounded-2xl">
-                  <Mail className="text-primary" size={24} />
+                <div className="p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform">
+                  <Mail className="text-primary" size={22} />
                 </div>
                 <div>
-                    <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-1">Email Me</div>
-                    <div className="text-xl font-bold">{personalInfo.email}</div>
+                    <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Email Me</div>
+                    <div className="text-lg md:text-xl font-bold group-hover:text-primary transition-colors">{personalInfo.email}</div>
                 </div>
-              </motion.div>
+              </motion.a>
+
+              <motion.a 
+               href={`tel:${personalInfo.phone}`}
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.05 }}
+               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
+              >
+                <div className="p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform">
+                  <Phone className="text-primary" size={22} />
+                </div>
+                <div>
+                    <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Call / WhatsApp</div>
+                    <div className="text-lg md:text-xl font-bold group-hover:text-primary transition-colors">+91 {personalInfo.phone}</div>
+                </div>
+              </motion.a>
 
               <motion.div 
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="flex items-center gap-6 p-6 glass rounded-2xl border border-white/20 dark:border-white/10"
+               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10"
               >
-                <div className="p-4 bg-primary/10 rounded-2xl">
-                    <MapPin className="text-primary" size={24} />
+                <div className="p-3.5 bg-primary/10 rounded-2xl">
+                    <MapPin className="text-primary" size={22} />
                 </div>
                 <div>
-                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-1">Location</div>
-                   <div className="text-xl font-bold">{personalInfo.location}</div>
+                   <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Location</div>
+                   <div className="text-lg md:text-xl font-bold">{personalInfo.location}</div>
                 </div>
               </motion.div>
             </div>
@@ -92,50 +110,50 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="glass p-10 rounded-3xl shadow-2xl relative overflow-hidden"
+            className="glass-card p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-border/80"
           >
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-purple-500" />
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-blue-500 to-cyan-400" />
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">Full Name</label>
+                  <label htmlFor="name" className="text-xs font-bold ml-1 uppercase tracking-wider text-muted-foreground">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     required
-                    className="w-full px-6 py-4 rounded-xl border border-border bg-white dark:bg-muted/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                    className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">Email Address</label>
+                  <label htmlFor="email" className="text-xs font-bold ml-1 uppercase tracking-wider text-muted-foreground">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     required
-                    className="w-full px-6 py-4 rounded-xl border border-border bg-white dark:bg-muted/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                    className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">Subject</label>
+                <label htmlFor="subject" className="text-xs font-bold ml-1 uppercase tracking-wider text-muted-foreground">Subject</label>
                 <input
                   type="text"
                   id="subject"
                   required
-                  className="w-full px-6 py-4 rounded-xl border border-border bg-white dark:bg-muted/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none"
-                  placeholder="Project Inquiry"
+                  className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
+                  placeholder="Project Inquiry / Job Opportunity"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold ml-1 uppercase tracking-widest text-muted-foreground">Your Message</label>
+                <label htmlFor="message" className="text-xs font-bold ml-1 uppercase tracking-wider text-muted-foreground">Your Message</label>
                 <textarea
                   id="message"
                   required
                   rows={4}
-                  className="w-full px-6 py-4 rounded-xl border border-border bg-white dark:bg-muted/50 focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-foreground placeholder:text-muted-foreground/60"
+                  placeholder="Tell me about your project or role..."
                 />
               </div>
               <button
@@ -144,8 +162,8 @@ export default function Contact() {
                 className={cn(
                   "w-full py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg active:scale-[0.98]",
                   isSuccess 
-                    ? "bg-green-500 text-white" 
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
+                    ? "bg-emerald-600 text-white" 
+                    : "bg-gradient-to-r from-primary to-blue-600 text-primary-foreground hover:shadow-xl hover:shadow-primary/25"
                 )}
               >
                 {isSubmitting ? (

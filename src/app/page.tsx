@@ -11,7 +11,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const featuredProjects = projects.slice(0, 2);
+  const featuredProjects = projects.slice(0, 4);
 
   return (
     <>
@@ -28,11 +28,11 @@ export default function Home() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Featured <span className="text-gradient">Projects</span></h2>
               </div>
               <Link href="/projects" className="group flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all">
-                View All Projects <ArrowRight size={20} />
+                View All Projects ({projects.length}) <ArrowRight size={20} />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {featuredProjects.map((project, index) => (
                 <ProjectCard key={project.slug} project={project} index={index} />
               ))}
