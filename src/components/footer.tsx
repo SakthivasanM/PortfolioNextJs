@@ -20,12 +20,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="mt-auto border-t border-border bg-muted/30 py-12 px-6 md:px-12 lg:px-24">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <footer className="mt-auto border-t border-border bg-muted/30 py-10 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-24">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
         <div className="flex flex-col space-y-4 md:col-span-2">
           <Link
             href="/"
-            className="text-2xl font-bold flex items-center gap-2.5 group"
+            className="text-xl sm:text-2xl font-bold flex items-center gap-2 sm:gap-2.5 group"
           >
             <MsvLogo size={32} showGlow={false} />
             <span className="text-foreground group-hover:text-primary transition-colors">

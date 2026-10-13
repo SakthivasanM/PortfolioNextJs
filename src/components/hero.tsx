@@ -61,8 +61,8 @@ export default function Hero() {
   }, [isPaused]);
 
   return (
-    <section className="relative min-h-[calc(100vh-4.5rem)] flex items-center justify-center py-10 lg:py-16 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-center">
+    <section className="relative min-h-[calc(100vh-4.5rem)] flex items-center justify-center pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 xl:gap-16 items-center">
         {/* Left Column: Bio & CTAs */}
         <motion.div
           variants={container}
@@ -71,8 +71,8 @@ export default function Hero() {
           className="relative z-10 lg:col-span-7 flex flex-col space-y-6 lg:space-y-7"
         >
           {/* Pill Badges */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-2.5">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 text-xs font-semibold tracking-wide shadow-sm backdrop-blur-md">
+          <motion.div variants={item} className="flex flex-wrap items-center gap-2 sm:gap-2.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-3.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 text-xs font-semibold tracking-wide shadow-sm backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -80,7 +80,7 @@ export default function Hero() {
               <span>Open for Opportunities</span>
             </div>
 
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 text-xs font-semibold tracking-wide shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-400 border border-amber-500/30 text-xs font-semibold tracking-wide shadow-sm backdrop-blur-md">
               <Trophy size={13} className="text-amber-500 animate-pulse" />
               <span>Emerging Talent Award 2026</span>
             </div>
@@ -94,7 +94,7 @@ export default function Hero() {
           {/* Heading */}
           <motion.h1
             variants={item}
-            className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[4rem] font-black tracking-tight leading-[1.08] text-foreground"
+            className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-[4rem] font-black tracking-tight leading-[1.12] sm:leading-[1.08] text-foreground break-words"
           >
             Crafting{" "}
             <span className="text-gradient inline-block">
@@ -106,45 +106,47 @@ export default function Hero() {
           {/* Subtitle */}
           <motion.p
             variants={item}
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed"
           >
             I am <strong className="text-foreground font-bold">{personalInfo.name}</strong>, a Software Engineer & Frontend Developer with <span className="text-foreground font-semibold">2+ years</span> building scalable enterprise platforms across HRMS, AI, logistics, and compliance domains using <span className="text-primary font-semibold">React.js</span>, <span className="text-primary font-semibold">Next.js</span>, <span className="text-primary font-semibold">React Native</span>, and <span className="text-primary font-semibold">Firebase</span>.
           </motion.p>
 
           {/* Action Buttons */}
-          <motion.div variants={item} className="flex flex-wrap items-center gap-3.5 pt-1">
+          <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3.5 pt-1">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-blue-600 text-primary-foreground font-semibold hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 transition-all group"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary to-blue-600 text-primary-foreground font-semibold hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 transition-all group text-sm sm:text-base shadow-md shadow-primary/20"
             >
               <span>Explore Projects</span>
               <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <Link
-              href={personalInfo.resume}
-              target="_blank"
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl glass-card text-foreground font-semibold hover:border-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-sm group"
-            >
-              <Download size={17} className="text-muted-foreground group-hover:text-primary transition-colors" />
-              <span>Download Resume</span>
-            </Link>
+            <div className="grid grid-cols-2 sm:flex sm:items-center gap-2.5 sm:gap-3.5">
+              <Link
+                href={personalInfo.resume}
+                target="_blank"
+                className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-5 py-3 rounded-xl glass-card text-foreground font-semibold hover:border-primary/40 hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-sm group text-xs sm:text-sm text-center"
+              >
+                <Download size={15} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                <span className="truncate">Download Resume</span>
+              </Link>
 
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-border/80 bg-background/60 hover:bg-muted/80 text-foreground/80 hover:text-foreground font-semibold hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-sm"
-            >
-              <Mail size={17} className="text-muted-foreground" />
-              <span>Contact Me</span>
-            </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-3.5 sm:px-5 py-3 rounded-xl border border-border/80 bg-background/60 hover:bg-muted/80 text-foreground/80 hover:text-foreground font-semibold hover:-translate-y-0.5 active:translate-y-0 transition-all shadow-sm text-xs sm:text-sm text-center"
+              >
+                <Mail size={15} className="text-muted-foreground shrink-0" />
+                <span className="truncate">Contact Me</span>
+              </Link>
+            </div>
           </motion.div>
 
           {/* Social Dock */}
           <motion.div
             variants={item}
-            className="pt-2 flex flex-wrap items-center gap-3 text-muted-foreground"
+            className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-muted-foreground"
           >
-            <div className="inline-flex items-center gap-2.5 p-1.5 px-3 rounded-2xl glass border border-border/60 shadow-sm">
+            <div className="inline-flex items-center gap-2 sm:gap-2.5 p-1.5 px-2.5 sm:px-3 rounded-2xl glass border border-border/60 shadow-sm shrink-0">
               <Link
                 href={personalInfo.github}
                 target="_blank"
@@ -152,7 +154,7 @@ export default function Hero() {
                 aria-label="GitHub Profile"
                 className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-all focus:outline-none"
               >
-                <Github size={18} />
+                <Github size={17} />
               </Link>
               <Link
                 href={personalInfo.linkedin}
@@ -161,27 +163,27 @@ export default function Hero() {
                 aria-label="LinkedIn Profile"
                 className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-all focus:outline-none"
               >
-                <Linkedin size={18} />
+                <Linkedin size={17} />
               </Link>
               <Link
                 href={`mailto:${personalInfo.email}`}
                 aria-label="Send Email"
                 className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-all focus:outline-none"
               >
-                <Mail size={18} />
+                <Mail size={17} />
               </Link>
               <Link
                 href={`tel:${personalInfo.phone}`}
                 aria-label="Call or WhatsApp"
                 className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-all focus:outline-none"
               >
-                <Phone size={18} />
+                <Phone size={17} />
               </Link>
             </div>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-muted/40 text-xs font-semibold border border-border/50 text-muted-foreground">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-2xl bg-muted/40 text-xs font-semibold border border-border/50 text-muted-foreground max-w-full">
               <MapPin size={13} className="text-primary shrink-0" />
-              <span>{personalInfo.location}</span>
+              <span className="truncate">{personalInfo.location}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -203,19 +205,19 @@ export default function Hero() {
             className="glass-card rounded-3xl border border-border/80 shadow-2xl overflow-hidden relative"
           >
             {/* Window Header */}
-            <div className="px-5 py-3.5 border-b border-border/70 flex items-center justify-between bg-muted/40">
+            <div className="px-4 sm:px-5 py-3 border-b border-border/70 flex items-center justify-between bg-muted/40 gap-2">
               {/* Traffic Lights */}
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-rose-500/80 inline-block" />
-                <span className="h-3 w-3 rounded-full bg-amber-500/80 inline-block" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
-                <span className="text-xs font-mono text-muted-foreground/80 ml-2 font-medium">
+              <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-rose-500/80 inline-block shrink-0" />
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-500/80 inline-block shrink-0" />
+                <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500/80 inline-block shrink-0" />
+                <span className="text-[11px] sm:text-xs font-mono text-muted-foreground/80 ml-1.5 sm:ml-2 font-medium truncate">
                   system-telemetry.tsx
                 </span>
               </div>
 
               {/* Live Status Indicator & Auto-switch badge */}
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
                 <span className="text-[11px] text-muted-foreground/70 hidden sm:inline font-mono">
                   {isPaused ? "Paused" : "Auto-cycle"}
                 </span>
@@ -227,7 +229,7 @@ export default function Hero() {
             </div>
 
             {/* Interactive Tab Switcher with Auto Switch Indicator */}
-            <div className="flex border-b border-border/60 bg-muted/20 px-3 pt-2 relative">
+            <div className="flex border-b border-border/60 bg-muted/20 px-2 sm:px-3 pt-2 relative">
               {TABS.map((tab) => {
                 const label =
                   tab === "architecture"
@@ -241,7 +243,7 @@ export default function Hero() {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`flex-1 pb-2.5 pt-1 text-xs font-bold transition-all relative ${
+                    className={`flex-1 pb-2.5 pt-1 text-[11px] sm:text-xs font-bold transition-all relative ${
                       isActive
                         ? "text-primary"
                         : "text-muted-foreground hover:text-foreground"
@@ -261,7 +263,7 @@ export default function Hero() {
             </div>
 
             {/* Tab Contents (Exact uniform height for all tabs) */}
-            <div className="p-5 md:p-6 h-[400px] flex flex-col justify-between">
+            <div className="p-4 sm:p-5 md:p-6 min-h-[380px] sm:h-[400px] flex flex-col justify-between">
               <div className="flex-1 flex flex-col overflow-hidden pb-3">
                 <AnimatePresence mode="wait">
                   {activeTab === "architecture" && (
@@ -493,13 +495,13 @@ export default function Hero() {
               </div>
 
               {/* Bottom Quick Bar (Pinned at constant bottom position) */}
-              <div className="pt-3 border-t border-border/50 flex items-center justify-between text-xs text-muted-foreground shrink-0">
-                <span className="flex items-center gap-1.5 font-semibold text-foreground text-xs">
-                  <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
+              <div className="pt-3 border-t border-border/50 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2 text-xs text-muted-foreground shrink-0">
+                <span className="flex items-center gap-1.5 font-semibold text-foreground text-[11px] sm:text-xs truncate">
+                  <CheckCircle2 size={13} className="text-emerald-500 shrink-0" />
                   Kryptos Infosys • Chennai
                 </span>
-                <span className="flex items-center gap-1.5 text-xs font-bold text-primary bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
-                  <Activity size={13} className="shrink-0" />
+                <span className="flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-primary bg-primary/10 px-2 sm:px-2.5 py-1 rounded-full border border-primary/20 shrink-0">
+                  <Activity size={12} className="shrink-0" />
                   12+ Enterprise Apps
                 </span>
               </div>

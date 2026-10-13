@@ -77,8 +77,8 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 md:pt-28 pb-20 relative">
-        <div className="container mx-auto px-6 md:px-12 space-y-24">
+      <main className="min-h-screen pt-24 sm:pt-28 md:pt-32 pb-20 relative">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 space-y-16 sm:space-y-24">
           {/* Main Story & Profile Hero */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left: Executive Photo Showcase & Professional Dossier */}
@@ -348,7 +348,7 @@ export default function AboutPage() {
                   <Sparkles size={13} />
                   <span>About Sakthivasan M</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.08] text-foreground">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] sm:leading-[1.08] text-foreground">
                   Engineering{" "}
                   <span className="text-gradient">Enterprise-Grade</span>{" "}
                   Web & Mobile Architectures.

@@ -43,7 +43,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl font-bold tracking-tight"
+                className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight"
               >
                 All <span className="text-gradient">Projects</span>.
               </motion.h1>
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
                  initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  transition={{ delay: 0.2 }}
-                 className="text-muted-foreground text-lg max-w-xl"
+                 className="text-muted-foreground text-base sm:text-lg max-w-xl"
               >
                  Explore a collection of my work ranging from enterprise dashboards to innovative AI integrations and mobile apps.
               </motion.p>
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-all border ${
+                className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-bold transition-all border ${
                   activeCategory === category
                     ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
                     : "bg-muted/50 text-muted-foreground border-border hover:bg-muted hover:border-primary/20"

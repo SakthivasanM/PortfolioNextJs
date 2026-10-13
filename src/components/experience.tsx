@@ -23,7 +23,7 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
           >
             Professional <span className="text-gradient">Journey</span>
           </motion.h2>
@@ -32,14 +32,14 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed"
+            className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed"
           >
             Track record of continuous growth at Kryptos Infosys, evolving from Trainee to Associate Software Engineer delivering production-grade architectures.
           </motion.p>
         </div>
 
         {/* Timeline Container */}
-        <div className="relative border-l-2 border-primary/20 ml-5 md:ml-10 space-y-12 max-w-5xl mx-auto">
+        <div className="relative border-l-2 border-primary/20 ml-3.5 sm:ml-6 md:ml-10 space-y-8 sm:space-y-12 max-w-5xl mx-auto">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.position}`}
@@ -47,15 +47,15 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="relative pl-7 md:pl-10"
+              className="relative pl-5 sm:pl-7 md:pl-10"
             >
-              {/* Timeline Node - perfectly centered horizontally on border line and vertically with card title */}
-              <div className="absolute -left-[21px] top-6 md:top-[30px] w-10 h-10 bg-background rounded-full border-2 border-primary shadow-md shadow-primary/20 flex items-center justify-center z-10">
-                <Briefcase className="text-primary" size={17} />
+              {/* Timeline Node - centered on border line */}
+              <div className="absolute -left-[17px] sm:-left-[21px] top-5 sm:top-6 md:top-[30px] w-8 h-8 sm:w-10 sm:h-10 bg-background rounded-full border-2 border-primary shadow-md shadow-primary/20 flex items-center justify-center z-10">
+                <Briefcase className="text-primary w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
 
               {/* Experience Card */}
-              <div className="glass-card p-7 md:p-8 rounded-3xl hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 group">
+              <div className="glass-card p-5 sm:p-7 md:p-8 rounded-3xl hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 group">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-5 gap-3">
                   <div>
                     <h3 className="text-2xl md:text-3xl font-extrabold group-hover:text-primary transition-colors text-foreground">

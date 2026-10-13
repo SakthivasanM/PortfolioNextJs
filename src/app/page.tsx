@@ -22,13 +22,13 @@ export default function Home() {
         {/* Featured Projects Section */}
         <section id="projects" className="section-padding bg-background">
           <div className="container mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-              <div className="space-y-4">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-4">
+              <div className="space-y-3">
                 <div className="text-primary font-bold uppercase tracking-wider text-xs">Selected Works</div>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Featured <span className="text-gradient">Projects</span></h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">Featured <span className="text-gradient">Projects</span></h2>
               </div>
-              <Link href="/projects" className="group flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all">
-                View All Projects ({projects.length}) <ArrowRight size={20} />
+              <Link href="/projects" className="group flex items-center gap-2 font-bold text-primary hover:gap-4 transition-all text-sm sm:text-base">
+                View All Projects ({projects.length}) <ArrowRight size={18} />
               </Link>
             </div>
             

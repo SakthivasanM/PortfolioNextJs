@@ -23,7 +23,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
           >
             Core Stack & <span className="text-gradient">Expertise</span>
           </motion.h2>
@@ -32,13 +32,13 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed"
+            className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed"
           >
             Battle-tested technologies powering high-concurrency enterprise web and mobile platforms with security and performance baked in.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.category}
@@ -46,7 +46,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
-              className="glass-card p-7 md:p-8 rounded-3xl hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group flex flex-col justify-between"
+              className="glass-card p-5 sm:p-7 md:p-8 rounded-3xl hover:border-primary/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3.5 mb-6">

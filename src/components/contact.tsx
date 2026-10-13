@@ -40,7 +40,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight"
               >
                 Let&apos;s Build <span className="text-gradient">Something Great</span> Together.
               </motion.h2>
@@ -48,26 +48,26 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-muted-foreground text-lg max-w-md"
+                className="text-muted-foreground text-base sm:text-lg max-w-md"
               >
                 Whether you have a project in mind or just want to chat about AI/Frontend trends, feel free to reach out.
               </motion.p>
             </div>
 
-            <div className="space-y-4 pt-6">
+            <div className="space-y-4 pt-4 sm:pt-6">
               <motion.a 
                href={`mailto:${personalInfo.email}`}
                initial={{ opacity: 0, x: -20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
+               className="flex items-center gap-4 sm:gap-6 p-4 sm:p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
               >
-                <div className="p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform">
-                  <Mail className="text-primary" size={22} />
+                <div className="p-3 sm:p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform shrink-0">
+                  <Mail className="text-primary" size={20} />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                     <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Email Me</div>
-                    <div className="text-lg md:text-xl font-bold group-hover:text-primary transition-colors">{personalInfo.email}</div>
+                    <div className="text-sm sm:text-base md:text-xl font-bold group-hover:text-primary transition-colors break-all sm:break-normal">{personalInfo.email}</div>
                 </div>
               </motion.a>
 
@@ -77,14 +77,14 @@ export default function Contact() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.05 }}
-               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
+               className="flex items-center gap-4 sm:gap-6 p-4 sm:p-5 glass rounded-2xl border border-white/20 dark:border-white/10 hover:border-primary/30 transition-all group block"
               >
-                <div className="p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform">
-                  <Phone className="text-primary" size={22} />
+                <div className="p-3 sm:p-3.5 bg-primary/10 rounded-2xl group-hover:scale-105 transition-transform shrink-0">
+                  <Phone className="text-primary" size={20} />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                     <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Call / WhatsApp</div>
-                    <div className="text-lg md:text-xl font-bold group-hover:text-primary transition-colors">+91 {personalInfo.phone}</div>
+                    <div className="text-sm sm:text-base md:text-xl font-bold group-hover:text-primary transition-colors">+91 {personalInfo.phone}</div>
                 </div>
               </motion.a>
 
@@ -93,14 +93,14 @@ export default function Contact() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="flex items-center gap-6 p-5 glass rounded-2xl border border-white/20 dark:border-white/10"
+               className="flex items-center gap-4 sm:gap-6 p-4 sm:p-5 glass rounded-2xl border border-white/20 dark:border-white/10"
               >
-                <div className="p-3.5 bg-primary/10 rounded-2xl">
-                    <MapPin className="text-primary" size={22} />
+                <div className="p-3 sm:p-3.5 bg-primary/10 rounded-2xl shrink-0">
+                    <MapPin className="text-primary" size={20} />
                 </div>
-                <div>
-                   <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Location</div>
-                   <div className="text-lg md:text-xl font-bold">{personalInfo.location}</div>
+                <div className="min-w-0 flex-1">
+                    <div className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-0.5">Location</div>
+                    <div className="text-sm sm:text-base md:text-xl font-bold">{personalInfo.location}</div>
                 </div>
               </motion.div>
             </div>

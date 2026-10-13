@@ -37,14 +37,14 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border/80 py-3 shadow-md shadow-slate-900/5 dark:shadow-black/20"
-          : "bg-transparent py-5"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border/80 py-2.5 sm:py-3 shadow-md shadow-slate-900/5 dark:shadow-black/20"
+          : "bg-background/40 md:bg-transparent backdrop-blur-md md:backdrop-blur-none py-3.5 sm:py-5"
       )}
     >
-      <nav className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="text-2xl font-bold group flex items-center gap-2.5">
-          <MsvLogo size={36} />
+        <Link href="/" className="text-xl sm:text-2xl font-bold group flex items-center gap-2 sm:gap-2.5">
+          <MsvLogo size={32} className="sm:w-9 sm:h-9" />
           <span className="text-foreground font-extrabold tracking-tight group-hover:text-primary transition-colors">
             Sakthivasan<span className="text-primary font-black">.M</span>
           </span>
@@ -103,20 +103,20 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Toggle */}
-        <div className="flex items-center space-x-3 md:hidden">
+        <div className="flex items-center space-x-2 sm:space-x-3 md:hidden">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-xl border border-border/70 bg-card hover:bg-muted transition-all text-muted-foreground hover:text-primary focus:outline-none"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 rounded-xl border border-border/70 bg-card hover:bg-muted transition-all text-muted-foreground hover:text-primary focus:outline-none"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>

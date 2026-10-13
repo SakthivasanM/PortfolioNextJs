@@ -33,7 +33,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" /> Back to Projects
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -41,7 +41,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             >
               <div className="space-y-4">
                 <div className="text-primary font-bold uppercase tracking-wider text-xs">Project Case Study</div>
-                <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
                   {project.title}
                 </h1>
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -54,17 +54,17 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               <div className="prose prose-lg dark:prose-invert">
-                <p className="text-muted-foreground text-xl leading-relaxed">
+                <p className="text-muted-foreground text-base sm:text-xl leading-relaxed">
                   {project.description}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-                <Link href={project.live} target="_blank" className="flex items-center justify-center gap-3 py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all shadow-xl group">
-                   Live Demo <ExternalLink size={20} className="group-hover:scale-110 transition-transform" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-6">
+                <Link href={project.live} target="_blank" className="flex items-center justify-center gap-3 py-3.5 sm:py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all shadow-xl group text-sm sm:text-base">
+                   Live Demo <ExternalLink size={18} className="group-hover:scale-110 transition-transform" />
                 </Link>
-                <Link href={project.github} target="_blank" className="flex items-center justify-center gap-3 py-4 rounded-xl border border-border bg-card font-bold hover:bg-muted transition-all group shadow-sm">
-                   View Codebase <Github size={20} className="group-hover:scale-110 transition-transform" />
+                <Link href={project.github} target="_blank" className="flex items-center justify-center gap-3 py-3.5 sm:py-4 rounded-xl border border-border bg-card font-bold hover:bg-muted transition-all group shadow-sm text-sm sm:text-base">
+                   View Codebase <Github size={18} className="group-hover:scale-110 transition-transform" />
                 </Link>
               </div>
 

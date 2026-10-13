@@ -26,7 +26,7 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight"
           >
             Achievements & <span className="text-gradient">Certifications</span>
           </motion.h2>
@@ -35,7 +35,7 @@ export default function Certifications() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed"
+            className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed"
           >
             Milestones of excellence recognized through quarterly corporate rewards and industry credentials.
           </motion.p>
@@ -51,19 +51,19 @@ export default function Certifications() {
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/25 via-orange-500/20 to-amber-500/25 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-80" />
             
-            <div className="relative glass-card p-8 md:p-10 rounded-3xl border-2 border-amber-500/35 dark:border-amber-400/30 shadow-2xl overflow-hidden">
+            <div className="relative glass-card p-5 sm:p-8 md:p-10 rounded-3xl border-2 border-amber-500/35 dark:border-amber-400/30 shadow-2xl overflow-hidden">
               <div className="absolute top-0 right-0 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
               
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="p-4 bg-gradient-to-br from-amber-500/20 to-orange-500/20 text-amber-500 rounded-2xl border border-amber-500/30 shadow-inner">
-                    <Trophy size={36} className="text-amber-500 animate-pulse" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3.5 sm:gap-4">
+                  <div className="p-3 sm:p-4 bg-gradient-to-br from-amber-500/20 to-orange-500/20 text-amber-500 rounded-2xl border border-amber-500/30 shadow-inner shrink-0">
+                    <Trophy size={32} className="text-amber-500 animate-pulse sm:w-9 sm:h-9" />
                   </div>
                   <div>
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30 mb-2">
                       <Sparkles size={12} /> {featuredAward.badge}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight text-foreground">
                       {featuredAward.title}
                     </h3>
                   </div>
