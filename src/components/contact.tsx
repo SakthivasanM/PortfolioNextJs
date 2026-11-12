@@ -3,23 +3,59 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
-import { useForm } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { personalInfo } from "@/lib/data";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setErrorMessage(
+          data?.error || "Failed to send message. Please try again."
+        );
+        return;
+      }
+
       setIsSuccess(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 2000);
+    } catch {
+      setErrorMessage("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,6 +156,9 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     required
                     className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
                     placeholder="John Doe"
@@ -130,6 +169,9 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     required
                     className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
                     placeholder="john@example.com"
@@ -141,6 +183,9 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   required
                   className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground/60"
                   placeholder="Project Inquiry / Job Opportunity"
@@ -150,12 +195,20 @@ export default function Contact() {
                 <label htmlFor="message" className="text-xs font-bold ml-1 uppercase tracking-wider text-muted-foreground">Your Message</label>
                 <textarea
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   required
                   rows={4}
                   className="w-full px-5 py-3.5 rounded-xl border border-border/80 bg-muted/40 focus:bg-background focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-foreground placeholder:text-muted-foreground/60"
                   placeholder="Tell me about your project or role..."
                 />
               </div>
+              {errorMessage && (
+                <p className="text-sm text-red-500 font-medium" role="alert">
+                  {errorMessage}
+                </p>
+              )}
               <button
                 type="submit"
                 disabled={isSubmitting}
